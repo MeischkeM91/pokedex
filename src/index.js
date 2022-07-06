@@ -1,4 +1,5 @@
 import './style.css';
+import createPokemonList from './pokemonList';
 
 
 // Calling the API and displaying to test that it works
@@ -13,7 +14,7 @@ async function getPokedex(dex){
     return dexReturned;
 };
 
-// Display the list of pokemon in the dex to confirm it is working
+/* // Display the list of pokemon in the dex to confirm it is working
 function pokemonList(dexData){
     let pokedexList = dexData.pokemon_entries;
     for(let i=0;i<pokedexList.length;i++){
@@ -25,10 +26,13 @@ function pokemonList(dexData){
 async function runPokeDex(dex){
     const getDex = await getPokedex(dex);
     pokemonList(getDex);
-}
+} */
 
-runPokeDex(pokedex);
-
+//runPokeDex(pokedex);
+console.log('test');
+createPokemonList(getPokedex('kanto'));
+createPokemonList(getPokedex('kanto'));
+createPokemonList(getPokedex('kanto'));
 
 
 /* const testPara = document.querySelector('.test')
