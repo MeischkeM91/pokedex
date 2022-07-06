@@ -1,6 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 #wrapper{
     display: grid;
-    grid-template-rows: 100px 1fr 25px;
+    grid-template-rows: auto 1fr 25px;
     grid-template-columns: 2fr 1fr;
     grid-template-areas: 
     "header header"
@@ -11,7 +15,31 @@
     height: 95vh;
     background-color: tomato;
 }
-.header{grid-area: header;}
-.pokedex-container{grid-area: pokedexContainer;}
-.pokemon-list{grid-area: pokemonList;}
-footer{grid-area: footer;}
+.header{
+    grid-area: header;
+    font-size: 7rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 600;
+    color: gold;
+    -webkit-text-stroke: 5px royalblue;
+    text-align: center;
+}
+.pokedex-container{
+    grid-area: pokedexContainer;
+    background-color: whitesmoke;
+    border: 3px solid #4e4e4e;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+.pokemon-list{
+    grid-area: pokemonList;
+    background-color: whitesmoke;
+    border: 3px solid #4e4e4e;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+footer{grid-area: footer; text-align: center;}
