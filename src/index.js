@@ -9,10 +9,7 @@ export default async function getPokedex(dex){
     return dexReturned;
 };
 
-
-//runPokeDex(pokedex);
+// test code
 console.log('test');
 createPokemonList('kanto');
-//createPokemonList(getPokedex('kanto'));
-//createPokemonList(getPokedex('kanto'));
 

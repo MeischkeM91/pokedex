@@ -1,11 +1,23 @@
 // This file contains the code to create the Pokemon list 
+import getPokedex from './index';
 
-export default function createPokemonList(dexImg, dexName, dexNum){
+export default async function createPokemonList(dex){
     const pokemonList = document.querySelector('.pokemon-list');
 
-    let pokemonImg = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png';
-    let pokemonName = 'Charmander';
-    let pokemonNum = '#004';
+    let test = dex;
+    console.log(test);
+    // Call the API and get the data
+    const dexData = await getPokedex(dex);
+
+    console.log(dexData);  //test purposes
+
+    for(let i=0; i<=dexData.pokemon_entries.length; i++){
+        // Declare var for each data point needed
+        let pokemonNum = dexData.pokemon_entries[i].entry_number;
+        let pokemonImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonNum}.png`;
+        let pokemonName = dexData.pokemon_entries[i].pokemon_species.name;
+        createPokemonEntry(pokemonImg,pokemonName,pokemonNum);
+    }
 
     function createPokemonEntry(image, name, num){
         // Container for entry
@@ -32,5 +44,5 @@ export default function createPokemonList(dexImg, dexName, dexNum){
         pokemonListEntry.appendChild(pokemonListName);
         pokemonListEntry.appendChild(pokemonListNumber);
     };
-    createPokemonEntry(pokemonImg,pokemonName,pokemonNum);
+
 };
