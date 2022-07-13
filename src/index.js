@@ -1,5 +1,6 @@
 import './style.css';
 import createPokemonList from './pokemonList';
+import createPokedexDisplay from './pokedexDisplay';
 
 
 // Query the correct pokedex and return
@@ -9,7 +10,13 @@ export default async function getPokedex(dex){
     return dexReturned;
 };
 
+export async function getPokemon(id){
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}/`);
+    const pokemonReturned = await response.json();
+    return pokemonReturned;
+};
+
 // test code
-console.log('test');
 createPokemonList('kanto');
+createPokedexDisplay('4');
 
