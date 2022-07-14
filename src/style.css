@@ -95,10 +95,16 @@
     font-size: 1.9rem;
     padding-bottom: 20px;
 }
+.pokedex-entry-header{
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+}
 .pokedex-adv-data{
     grid-area: pokedexAdvData;
+    align-self: center;
+    justify-self: center;
+    font-size: 2rem;
 }
-
 /************************
 ** End Pokedex Display **
 ************************/
