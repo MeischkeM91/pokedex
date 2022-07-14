@@ -16,4 +16,15 @@ const formatPokemonNumber = (num) =>{
     };
 };
 
-export {formatPokemonName, formatPokemonNumber};
+const getEngDexEntry = (data, num) =>{
+    let pokemonData = data;
+    let dexEntryNum = num;
+    if(pokemonData.flavor_text_entries[dexEntryNum].language.name == 'en'){
+        return pokemonData.flavor_text_entries[dexEntryNum].flavor_text;
+    } else {
+        dexEntryNum++;
+        return getEngDexEntry(pokemonData, dexEntryNum);
+    };
+};
+
+export {formatPokemonName, formatPokemonNumber, getEngDexEntry};
