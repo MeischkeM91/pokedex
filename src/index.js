@@ -16,7 +16,9 @@ export async function getPokemon(id){
     return pokemonReturned;
 };
 
-// test code
-createPokemonList('kanto');
-createPokedexDisplay('4');
+window.onload = function(){
+    createPokemonList('national');
+    createPokedexDisplay('25');
+};
+
 
